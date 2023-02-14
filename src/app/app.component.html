@@ -1,0 +1,12 @@
+<main>
+  <app-sidebar></app-sidebar>
+  <div class="container">
+    <app-topbar></app-topbar>
+    <div
+      [@fadeAnimation]="outlet.isActivated ? outlet.activatedRoute : ''"
+      class="page"
+    >
+      <router-outlet #outlet="outlet"></router-outlet>
+    </div>
+  </div>
+</main>

@@ -1,0 +1,57 @@
+h1 {
+  color: #1e1e1e;
+  margin-bottom: 32px;
+}
+
+form {
+  width: 100%;
+  gap: 20px;
+  display: grid;
+  grid-template-columns: auto auto auto;
+  align-items: flex-end;
+
+  .input-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+
+    label {
+      font-family: "Raleway";
+      font-style: normal;
+      font-weight: 400;
+      font-size: 1em;
+      color: #000000;
+    }
+
+    input {
+      width: 100%;
+      box-sizing: border-box;
+      padding: 8px 8px 8px 16px;
+      gap: 8px;
+      height: 40px;
+      background: #ffffff;
+      border: 1px solid #dde0e8;
+      border-radius: 8px;
+
+      &::placeholder {
+        color: #adbbce;
+      }
+    }
+  }
+}
+
+.create-modal {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-weight: 400;
+  font-size: 1em;
+  color: #ec7522;
+
+  .link {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    margin-bottom: 60px;
+  }
+}
