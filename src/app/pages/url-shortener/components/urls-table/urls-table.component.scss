@@ -1,0 +1,76 @@
+@import "../../../../../sass/variables.scss";
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+  padding: 23px 0px;
+  overflow: auto;
+
+  .col-1 {
+    min-width: 95px;
+    width: 10%;
+  }
+
+  .col-2 {
+    width: 20%;
+  }
+
+  .col-3 {
+    width: 50%;
+  }
+
+  .col-4 {
+    width: 20%;
+  }
+
+  thead {
+    tr {
+      border-bottom: 1px solid #d7dfea;
+    }
+    td {
+      font-size: 1em;
+      font-weight: 600;
+      color: $dark-blue;
+      padding: 23px 17px 17px;
+
+      &:last-of-type {
+        text-align: center;
+      }
+    }
+  }
+
+  tbody {
+    td {
+      padding: 19px 20px 25px 17px;
+
+      &:last-of-type {
+        display: flex;
+        justify-content: center;
+        margin: 0 auto;
+        gap: 40px;
+
+        img {
+          cursor: pointer;
+        }
+      }
+    }
+
+    tr {
+      &:not(:last-of-type) {
+        border-bottom: 1px solid #d7dfea;
+      }
+    }
+  }
+
+  .link {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+  }
+}
+
+.delete-modal {
+  display: flex;
+  justify-content: center;
+  gap: 32px;
+}

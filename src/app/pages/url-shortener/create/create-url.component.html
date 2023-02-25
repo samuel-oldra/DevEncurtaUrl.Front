@@ -1,0 +1,61 @@
+<h1>Criar novo link</h1>
+
+<app-card>
+  <form [formGroup]="newUrlForm">
+    <div class="input-group">
+      <label for="title">Título</label>
+      <input
+        placeholder="Pequena descrição do título"
+        type="text"
+        name="title"
+        formControlName="title"
+        id="title"
+      />
+    </div>
+
+    <div class="input-group">
+      <label for="title">Link de destino</label>
+      <input
+        placeholder="Pequena descrição do link"
+        type="text"
+        name="destinationLink"
+        formControlName="destinationLink"
+        id="destinationLink"
+      />
+    </div>
+
+    <app-button
+      [label]="'Criar'"
+      [size]="'md'"
+      [disabled]="newUrlForm.invalid"
+      (onClick)="createNewUrl()"
+    ></app-button>
+  </form>
+</app-card>
+
+<app-simple-modal
+  *ngIf="openCreateModal"
+  [contentTitle]="'Link criado'"
+  [contentText]="'Seu link foi encurtado e está pronto para ser compartilhado!'"
+  [openModal]="openCreateModal"
+  (modalClosed)="routeToLinksPage()"
+>
+  <footer class="create-modal">
+    <div class="link">
+      {{ createdLink.shortenedLink }}
+      <app-button
+        *ngIf="createdLink.shortenedLink"
+        [label]="'Copiar'"
+        [size]="'sm'"
+        [rounded]="true"
+        [icon]="linkIcon"
+        (onClick)="copyShortenedUrl()"
+      ></app-button>
+    </div>
+    <app-button
+      [size]="'md'"
+      [label]="'Entendi'"
+      (onClick)="routeToLinksPage()"
+    ></app-button>
+  </footer>
+</app-simple-modal>

@@ -1,0 +1,16 @@
+main {
+  display: flex;
+
+  .container {
+    width: 100%;
+
+    .page {
+      max-width: 1200px;
+      height: calc(100vh - 63px);
+      margin: 0 auto;
+      padding: 45px 42px 22px;
+      box-sizing: border-box;
+      overflow: auto;
+    }
+  }
+}

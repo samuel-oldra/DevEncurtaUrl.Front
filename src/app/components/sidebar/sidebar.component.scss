@@ -1,0 +1,36 @@
+@import "../../../../src/sass/variables.scss";
+
+.sidebar {
+  width: 20vw;
+  max-width: 249px;
+  min-width: 160px;
+  height: 100vh;
+  background: $soft-black;
+  padding: 57px 17px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  gap: 60px;
+
+  nav {
+    height: 100%;
+    overflow: auto;
+
+    a {
+      display: flex;
+      align-items: center;
+      height: 37px;
+      margin: 0 auto;
+      gap: 8px;
+      border-radius: 8px;
+      padding-left: 12px;
+      box-sizing: border-box;
+      text-transform: capitalize;
+      color: #ffffff;
+
+      &.active {
+        background: #ffffff30;
+      }
+    }
+  }
+}

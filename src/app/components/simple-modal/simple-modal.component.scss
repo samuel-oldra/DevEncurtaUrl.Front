@@ -1,0 +1,54 @@
+.overlay {
+  z-index: 2;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(47, 42, 42, 0.5);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  dialog {
+    width: 588px;
+    min-height: 247px;
+    border: none;
+    background: #ffffff;
+    border-radius: 24px;
+    padding: 24px;
+    box-sizing: border-box;
+
+    header {
+      display: flex;
+      justify-content: flex-end;
+
+      img {
+        cursor: pointer;
+      }
+    }
+
+    .content {
+      header {
+        flex-direction: column;
+
+        h1 {
+          font-family: "Raleway", Helvetica, Arial, sans-serif;
+          font-weight: 700;
+          color: #1e1e1e;
+          text-align: center;
+          margin-bottom: 20px;
+        }
+
+        p {
+          font-family: "Raleway", Helvetica, Arial, sans-serif;
+          font-weight: 400;
+          text-align: center;
+          color: #858585;
+          margin-bottom: 30px;
+        }
+      }
+    }
+  }
+}

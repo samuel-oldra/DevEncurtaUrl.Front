@@ -1,0 +1,63 @@
+<table>
+  <thead>
+    <tr>
+      <td class="col-1">Criado em</td>
+      <td class="col-2">Título</td>
+      <td class="col-3">Link encurtado</td>
+      <td class="col-4">Ações</td>
+    </tr>
+  </thead>
+  <tbody>
+    <ng-container *ngFor="let urlData of urlList">
+      <tr>
+        <td class="col-1">{{ urlData.createdAt }}</td>
+        <td class="col-2">{{ urlData.title }}</td>
+        <td class="col-3">
+          <div class="link">
+            {{ urlData.shortenedLink }}
+            <app-button
+              *ngIf="urlData.shortenedLink"
+              [label]="'Copiar'"
+              [size]="'sm'"
+              [rounded]="true"
+              [icon]="linkIcon"
+              (onClick)="copyShortenedUrl(urlData.shortenedLink)"
+            ></app-button>
+          </div>
+        </td>
+        <td class="col-4">
+          <img
+            (click)="emitEdit(urlData)"
+            src="../../../assets/icons/pen.svg"
+            alt="edit"
+          />
+          <img
+            (click)="openModal(urlData.id)"
+            src="../../../assets/icons/trash.svg"
+            alt="delete"
+          />
+        </td>
+      </tr>
+    </ng-container>
+  </tbody>
+</table>
+
+<app-simple-modal
+  [contentTitle]="'Apagar link'"
+  [contentText]="'Tem certeza que deseja apagar o link?'"
+  [openModal]="openDeleteModal"
+  (modalClosed)="modalClosed()"
+>
+  <footer class="delete-modal">
+    <app-button
+      [actionPrimary]="true"
+      [label]="'Não'"
+      (onClick)="modalClosed()"
+    ></app-button>
+    <app-button
+      [actionDanger]="true"
+      [label]="'Sim'"
+      (onClick)="deleteUrl()"
+    ></app-button>
+  </footer>
+</app-simple-modal>

@@ -1,0 +1,21 @@
+<aside class="sidebar">
+  <img
+    src="../../../assets/images/jornadadotnet.png"
+    alt="Jornada .NET direto ao ponto"
+    title="Jornada .NET direto ao ponto"
+  />
+  <nav>
+    <ul>
+      <li>
+        <a
+          routerLinkActive="active"
+          *ngFor="let route of routes"
+          [routerLink]="['/' + route]"
+        >
+          <img src="../../../assets/icons/link.svg" alt="icone de link" />
+          {{ route }}
+        </a>
+      </li>
+    </ul>
+  </nav>
+</aside>

@@ -1,0 +1,18 @@
+<div *ngIf="openModal" class="overlay" (click)="closeModal()">
+  <dialog (click)="$event.stopPropagation()" open>
+    <header>
+      <img
+        (click)="closeModal()"
+        src="../../../assets/icons/close.svg"
+        alt="close"
+      />
+    </header>
+    <div class="content">
+      <header>
+        <h1>{{ contentTitle }}</h1>
+        <p>{{ contentText }}</p>
+      </header>
+      <ng-content></ng-content>
+    </div>
+  </dialog>
+</div>

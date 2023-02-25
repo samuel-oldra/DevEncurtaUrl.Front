@@ -1,0 +1,31 @@
+@import "../../../../src/sass/variables.scss";
+
+section {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 6px;
+  margin-bottom: 20px;
+
+  h1 {
+    color: $soft-black;
+  }
+
+  app-button {
+    margin-top: 0;
+  }
+}
+
+p {
+  font-style: normal;
+  font-weight: 400;
+  color: #8a94a5;
+}
+
+img {
+  margin-bottom: 40px;
+}
+
+app-button {
+  margin-top: 32px;
+}

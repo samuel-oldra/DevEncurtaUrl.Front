@@ -1,0 +1,40 @@
+<section>
+  <div>
+    <h1>Encurtador de links</h1>
+    <p>
+      {{
+        !links.length
+          ? "Encurte seus links pela plataforma"
+          : "Os links criados aparecerão na tabela abaixo"
+      }}
+    </p>
+  </div>
+  <app-button
+    *ngIf="!!links.length"
+    [size]="'md'"
+    [label]="'Novo link'"
+    (onClick)="routeToCreatePage()"
+  ></app-button>
+</section>
+
+<app-card
+  *ngIf="!loading"
+  [defaultFlex]="!links.length"
+  [noPadding]="!!links.length"
+>
+  <ng-container *ngIf="!links.length; else hasLinks">
+    <img src="../../../assets/images/ilustracao.png" alt="ilustracao" />
+    <p>Adicione links para encurtar</p>
+    <app-button
+      [label]="'Novo link'"
+      (onClick)="routeToCreatePage()"
+    ></app-button>
+  </ng-container>
+  <ng-template #hasLinks>
+    <app-urls-table
+      [urlList]="links"
+      (editClicked)="routeToEditPage($event)"
+      (urlDeleted)="urlDeleted()"
+    ></app-urls-table>
+  </ng-template>
+</app-card>

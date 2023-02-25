@@ -1,0 +1,36 @@
+<ng-container *ngIf="urlData">
+  <h1>Editar link</h1>
+
+  <app-card>
+    <form [formGroup]="editUrlForm">
+      <div class="input-group">
+        <label for="title">Título</label>
+        <input
+          placeholder="Pequena descrição do título"
+          type="text"
+          name="title"
+          formControlName="title"
+          id="title"
+        />
+      </div>
+
+      <div class="input-group">
+        <label for="title">Link de destino</label>
+        <input
+          placeholder="Pequena descrição do link"
+          type="text"
+          name="destinationLink"
+          formControlName="destinationLink"
+          id="destinationLink"
+        />
+      </div>
+
+      <app-button
+        [label]="'Editar'"
+        [size]="'md'"
+        [disabled]="editUrlForm.invalid || !editUrlForm.dirty"
+        (onClick)="editUrl()"
+      ></app-button>
+    </form>
+  </app-card>
+</ng-container>

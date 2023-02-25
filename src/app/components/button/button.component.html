@@ -1,0 +1,14 @@
+<button
+  [class.large]="size === 'lg'"
+  [class.medium]="size === 'md'"
+  [class.small]="size === 'sm'"
+  [class.rounded]="rounded"
+  [class.with-icon]="icon"
+  [class.action-primary]="actionPrimary"
+  [class.action-danger]="actionDanger"
+  [disabled]="disabled"
+  (click)="buttonClicked()"
+>
+  {{ label }}
+  <img *ngIf="icon" [src]="icon" alt="copy" />
+</button>
