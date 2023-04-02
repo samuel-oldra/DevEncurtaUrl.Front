@@ -1,0 +1,85 @@
+@import "../../../../src/sass/variables.scss";
+
+button {
+  height: 58px;
+  background: $orange;
+  border-radius: 8px;
+  border: none;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 1.4em;
+  color: #ffffff;
+  cursor: pointer;
+  transition: background 0.4s;
+
+  &:hover {
+    background: #ff8024;
+  }
+
+  &.large {
+    width: 256px;
+  }
+
+  &.medium,
+  &.small {
+    font-size: 1em;
+    height: 40px;
+  }
+
+  &.medium {
+    width: 152px;
+  }
+
+  &.small {
+    width: 101px;
+  }
+
+  &.rounded {
+    width: 101px;
+    height: 40px;
+    background: $soft-orange;
+    border-radius: 30px;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 18px;
+    color: $orange;
+
+    &:hover {
+      border: 1px solid $orange;
+    }
+  }
+
+  &.action-primary,
+  &.action-danger {
+    width: 130px;
+    height: 48px;
+    border-radius: 8px;
+  }
+
+  &.action-primary {
+    background: $blue;
+
+    &:hover {
+      background: #004a80c9;
+    }
+  }
+
+  &.action-danger {
+    background: #ff0d4a;
+
+    &:hover {
+      background: #af012d;
+    }
+  }
+
+  &.with-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+  }
+
+  &:disabled {
+    background-color: #1e1e1ea1;
+  }
+}

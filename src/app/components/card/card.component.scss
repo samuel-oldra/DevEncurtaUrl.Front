@@ -1,0 +1,17 @@
+.card {
+  box-sizing: border-box;
+  padding: 70px;
+  min-height: 190px;
+  max-height: 619px;
+
+  &.no-padding {
+    padding: 0;
+  }
+
+  &.default-flex {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+}
